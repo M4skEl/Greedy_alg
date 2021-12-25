@@ -1,19 +1,19 @@
 import sys
 
 
-def one_counter(str):
+def one_counter(num):
     count = 0
-    while str != 0:
-        if str % 2 == 1:
+    while num != 0:
+        if num % 2 == 1:
             count += 1
-        str = int(str / 2)
+        num = int(num / 2)
     return count
 
 
-def zero_count(str):
+def zero_count(num):
     count = 0
-    while str % 2 == 0:
-        str = str / 2
+    while num % 2 == 0:
+        num = num / 2
         count += 1
     return count
 
@@ -23,7 +23,7 @@ def main():
     sum = int(input())
 
     while sum != 0:
-        half = bin(sum)
+
         if sum % 2 == 0:
             sum = int(sum / 2)
             command_list.append('dbl')
@@ -42,7 +42,7 @@ def main():
             elif count_1 == count_2:
                 zero_count_1 = zero_count(sum - 1)
                 zero_count_2 = zero_count(sum + 1)
-                if zero_count_1 < zero_count_2 and len(bin(sum + 1)) <= len(bin(sum - 1)):
+                if zero_count_1 < zero_count_2 and (sum+1)%(sum-1)!=0:
                     sum = sum + 1
                     command_list.append('dec')
                 else:

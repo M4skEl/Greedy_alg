@@ -49,7 +49,7 @@ def main():
                     sum = sum - 1
                     command_list.append('inc')
 
-    print(len(command_list))
+   # print(len(command_list))
     for i in range(len(command_list)):
         print(command_list[len(command_list) - 1 - i])
 
